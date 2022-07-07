@@ -6,4 +6,5 @@ root: intro
 chapters:
 - file: Sec-FSCAN
   sections:
-    - file: PotFunAngulo
+    - file: docs/PotFunAngulo
+    - file: docs/Calibración_detectores_v7
