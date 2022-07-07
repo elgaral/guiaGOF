@@ -1,0 +1,1173 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calibración fotodetectores y filtro neutro continuo &#8212; Guía Laboratorio Grupo de Óptica y Fotónica (GOF)</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Error en potencia con disco filtro continuo" href="PotFunAngulo.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/GOF.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Guía Laboratorio Grupo de Óptica y Fotónica (GOF)</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Guía general de laboratorio
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../Sec-FSCAN.html">
+   FSCAN
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="PotFunAngulo.html">
+     Error en potencia con disco filtro continuo
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Calibración fotodetectores y filtro neutro continuo
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/docs/Calibración_detectores_v7.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdocs/Calibración_detectores_v7.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/Calibración_detectores_v7.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenido">
+   Contenido
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-fotodetectores">
+   1. Calibración Fotodetectores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#itm">
+     ITM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#udea">
+     UdeA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datos-experimentales">
+     Datos experimentales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expresion-esperada">
+   Expresión esperada
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incertidumbre-para-el-caso-del-potenciometro-1815-c">
+     Incertidumbre para el caso del potenciometro 1815-C
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conclusiones">
+       Conclusiones:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determinacion-de-la-pendiente-m-de-los-detectores">
+     Determinación de la pendiente
+     <span class="math notranslate nohighlight">
+      \(m\)
+     </span>
+     de los detectores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grafica-de-los-valores-de-potencia-medidos-con-el-ohm">
+     Gráfica de los valores de potencia medidos con el OHM
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-detectores-para-medir-en-potencia">
+   Calibración detectores para medir en potencia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     13223
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fotodetector-newport-818-sl-s13223-con-filtro-od3">
+       Fotodetector: Newport 818-SL s13223 con filtro OD3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fotodetector-newport-818-sl-s13220-con-filtro-od3">
+       Fotodetector: Newport 818-SL s13220 con filtro OD3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-en-longitud-de-onda-de-633-nm">
+   2. Calibración en longitud de onda de 633 nm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fotodetector-6722b">
+     Fotodetector 6722B
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fotodetector-818-sl-s13220-con-od3">
+     Fotodetector 818-SL s13220 con OD3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calibración fotodetectores y filtro neutro continuo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#contenido">
+   Contenido
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-fotodetectores">
+   1. Calibración Fotodetectores
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#itm">
+     ITM
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#udea">
+     UdeA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#datos-experimentales">
+     Datos experimentales
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expresion-esperada">
+   Expresión esperada
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#incertidumbre-para-el-caso-del-potenciometro-1815-c">
+     Incertidumbre para el caso del potenciometro 1815-C
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conclusiones">
+       Conclusiones:
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#determinacion-de-la-pendiente-m-de-los-detectores">
+     Determinación de la pendiente
+     <span class="math notranslate nohighlight">
+      \(m\)
+     </span>
+     de los detectores
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grafica-de-los-valores-de-potencia-medidos-con-el-ohm">
+     Gráfica de los valores de potencia medidos con el OHM
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-detectores-para-medir-en-potencia">
+   Calibración detectores para medir en potencia
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     13223
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fotodetector-newport-818-sl-s13223-con-filtro-od3">
+       Fotodetector: Newport 818-SL s13223 con filtro OD3
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#fotodetector-newport-818-sl-s13220-con-filtro-od3">
+       Fotodetector: Newport 818-SL s13220 con filtro OD3
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calibracion-en-longitud-de-onda-de-633-nm">
+   2. Calibración en longitud de onda de 633 nm
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fotodetector-6722b">
+     Fotodetector 6722B
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fotodetector-818-sl-s13220-con-od3">
+     Fotodetector 818-SL s13220 con OD3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="calibracion-fotodetectores-y-filtro-neutro-continuo">
+<h1>Calibración fotodetectores y filtro neutro continuo<a class="headerlink" href="#calibracion-fotodetectores-y-filtro-neutro-continuo" title="Permalink to this headline">#</a></h1>
+<p>Por: Egdar Rueda, Esteban Marulanda, Jonathan Posada, mayo 2022</p>
+<section id="contenido">
+<h2>Contenido<a class="headerlink" href="#contenido" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Primeras pruebas calibración filtro y fotodetectores en longitud de onda de 1064 nm.</p></li>
+<li><p>Calibración en longitud de onda de 633 nm</p></li>
+</ol>
+</section>
+<section id="calibracion-fotodetectores">
+<h2>1. Calibración Fotodetectores<a class="headerlink" href="#calibracion-fotodetectores" title="Permalink to this headline">#</a></h2>
+<p>Mayo 16, 2022</p>
+<p>Verificación de la respuesta lineal de los diferentes fotodetectores. En esta ocasión hemos calibrado el disco filtro-neutro de Edmund Optics 54-082 de forma tal que comenzamos las medidas en el mayor valor de ND.</p>
+<p>La información de Edmund Optics:</p>
+<ul class="simple">
+<li><p>Rango ND: 0.04 a 4.0</p></li>
+<li><p>Incertidumbre en ND: 8%</p></li>
+<li><p>Rango angular: 0° a 310°</p></li>
+</ul>
+<section id="itm">
+<h3>ITM<a class="headerlink" href="#itm" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Medidor de potencia: Lightwave OMM-68108.</p></li>
+<li><p>Fotodetector: Lightwave OMH-6722B.</p></li>
+</ol>
+</section>
+<section id="udea">
+<h3>UdeA<a class="headerlink" href="#udea" title="Permalink to this headline">#</a></h3>
+<ol class="simple">
+<li><p>Medidor de potencia: Newport 1815-C: en posición 3 mide hasta 2 uA, en posición 4 hasta 20 uA, y en posición 5 hasta 200 uA.</p></li>
+<li><p>Fotodetector: Newport 818-SL s13223 con filtro OD3</p></li>
+<li><p>Fotodetector: Newport 818-SL s13220 con filtro OD3</p></li>
+</ol>
+<p>NOTA: esta vez usamos el filtro interferométrico en la banda 1064 nm, porque el láser deja pasar parte del láser de 980 nm.</p>
+<p>COn filtro 406 mW
+Sin filtro 476 mW</p>
+<p>La máxima potencia ya filtrada es de 406 nm. El único elemento extra entre el láser y el detector es el vidrio (UV Fused Silica) del disco. Por lo que se supone una pérdida debida a las dos reflexiones. Según el fabricante la transmitancia a 164 nm es de 94%, por lo tanto la transmitancia total es de aprox. 88%, y la reflexión total es de 12%. Entonces se espera que de el láser esté saliendo a 1064 nm 455 mW de potencia.</p>
+<p>El paso correspondiente a la menor potencia es -21, que se tomará como 0°, P = 159 uW.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> 
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.optimize</span> <span class="kn">import</span> <span class="n">curve_fit</span>
+<span class="c1">#from sklearn.metrics import r2_score</span>
+<span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">,</span> <span class="n">MultipleLocator</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="datos-experimentales">
+<h3>Datos experimentales<a class="headerlink" href="#datos-experimentales" title="Permalink to this headline">#</a></h3>
+<p>Para el 68108 está en potencia (mW), y para el 1815-C está en corriente (<span class="math notranslate nohighlight">\(\mu\)</span>A). Los desplazamientos son en pasos del servomotor. Se gira en la dirección antihorario con el paso cero sobre la vertical (arriba).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 6722B</span>
+<span class="n">paso1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">421</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">621</span><span class="p">,</span><span class="mi">721</span><span class="p">,</span><span class="mi">821</span><span class="p">,</span><span class="mi">921</span><span class="p">,</span><span class="mi">1021</span><span class="p">,</span><span class="mi">1121</span><span class="p">,</span><span class="mi">1221</span><span class="p">,</span>
+                  <span class="mi">1321</span><span class="p">,</span><span class="mi">1421</span><span class="p">,</span><span class="mi">1521</span><span class="p">,</span><span class="mi">1621</span><span class="p">,</span><span class="mi">1721</span><span class="p">,</span><span class="mi">1821</span><span class="p">,</span><span class="mi">1921</span><span class="p">,</span><span class="mi">2021</span><span class="p">])</span> <span class="c1"># paso</span>
+
+<span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">.159</span><span class="p">,</span><span class="mf">.243</span><span class="p">,</span><span class="mf">.392</span><span class="p">,</span><span class="mf">.616</span><span class="p">,</span><span class="mf">.915</span><span class="p">,</span><span class="mf">1.47</span><span class="p">,</span><span class="mf">2.23</span><span class="p">,</span><span class="mf">3.38</span><span class="p">,</span><span class="mf">5.09</span><span class="p">,</span><span class="mf">7.71</span><span class="p">,</span><span class="mf">11.63</span><span class="p">,</span><span class="mf">18.02</span><span class="p">,</span><span class="mf">27.76</span><span class="p">,</span>
+              <span class="mf">42.2</span><span class="p">,</span><span class="mf">62.9</span><span class="p">,</span><span class="mf">100.0</span><span class="p">,</span><span class="mf">170.9</span><span class="p">,</span><span class="mf">362.0</span><span class="p">,</span><span class="mf">397.1</span><span class="p">,</span><span class="mf">398.7</span><span class="p">,</span><span class="mf">403.5</span><span class="p">])</span> <span class="c1"># Potencia (mW)</span>
+
+<span class="c1">#13223</span>
+<span class="c1">#Posiciones dial: Pos. 3 hasta 921, Pos. 4 hasta 1421, resto en Pos. 5</span>
+<span class="n">paso2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">421</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">621</span><span class="p">,</span><span class="mi">721</span><span class="p">,</span><span class="mi">821</span><span class="p">,</span><span class="mi">921</span><span class="p">,</span><span class="mi">1021</span><span class="p">,</span><span class="mi">1121</span><span class="p">,</span><span class="mi">1221</span><span class="p">,</span>
+                  <span class="mi">1321</span><span class="p">,</span><span class="mi">1421</span><span class="p">,</span><span class="mi">1521</span><span class="p">,</span><span class="mi">1621</span><span class="p">,</span><span class="mi">1721</span><span class="p">,</span><span class="mi">1821</span><span class="p">,</span><span class="mi">1921</span><span class="p">,</span><span class="mi">2021</span><span class="p">])</span> <span class="c1"># paso</span>
+
+<span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.039</span><span class="p">,</span> <span class="mf">0.055</span><span class="p">,</span> <span class="mf">0.091</span><span class="p">,</span> <span class="mf">0.147</span><span class="p">,</span> <span class="mf">0.238</span><span class="p">,</span> <span class="mf">0.364</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">,</span> <span class="mf">0.829</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">1.86</span><span class="p">,</span> <span class="mf">2.86</span><span class="p">,</span> 
+             <span class="mf">4.43</span><span class="p">,</span> <span class="mf">6.80</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mf">24.3</span><span class="p">,</span> <span class="mf">41.1</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mf">97.9</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span> <span class="c1"># potencia uA</span>
+
+
+<span class="c1">#13220</span>
+<span class="c1">#Posiciones dial: Pos. 3 hasta 921, Pos. 4 hasta 1521, resto en Pos. 5</span>
+<span class="n">paso3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">421</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">621</span><span class="p">,</span><span class="mi">721</span><span class="p">,</span><span class="mi">821</span><span class="p">,</span><span class="mi">921</span><span class="p">,</span><span class="mi">1021</span><span class="p">,</span><span class="mi">1121</span><span class="p">,</span><span class="mi">1221</span><span class="p">,</span>
+                  <span class="mi">1321</span><span class="p">,</span><span class="mi">1421</span><span class="p">,</span><span class="mi">1521</span><span class="p">,</span><span class="mi">1621</span><span class="p">,</span><span class="mi">1721</span><span class="p">,</span><span class="mi">1821</span><span class="p">,</span><span class="mi">1921</span><span class="p">,</span><span class="mi">2021</span><span class="p">])</span> <span class="c1"># paso</span>
+
+<span class="n">w3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.129</span><span class="p">,</span> <span class="mf">0.210</span><span class="p">,</span> <span class="mf">0.325</span><span class="p">,</span> <span class="mf">0.495</span><span class="p">,</span> <span class="mf">0.745</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">,</span> 
+               <span class="mf">2.51</span><span class="p">,</span> <span class="mf">3.79</span><span class="p">,</span> <span class="mf">5.96</span><span class="p">,</span> <span class="mf">8.96</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">19.2</span><span class="p">,</span> <span class="mf">36.4</span><span class="p">,</span> <span class="mf">76.1</span><span class="p">,</span> <span class="mf">82.2</span><span class="p">,</span> <span class="mf">82.4</span><span class="p">,</span> <span class="mf">83.6</span><span class="p">])</span> <span class="c1"># potencia uA</span>
+
+
+<span class="n">paso_1</span> <span class="o">=</span> <span class="n">paso1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">w_1</span> <span class="o">=</span> <span class="n">w1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w1</span><span class="p">)</span>
+<span class="n">w_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">w_1</span><span class="p">)</span>
+
+<span class="n">paso_2</span> <span class="o">=</span> <span class="n">paso2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">w_2</span> <span class="o">=</span> <span class="n">w2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w2</span><span class="p">)</span>
+<span class="n">errA</span> <span class="o">=</span> <span class="mf">4.3</span><span class="o">/</span><span class="mi">100</span> <span class="c1"># Máximo error reportado por el fabricante</span>
+<span class="n">errf</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">errA</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error ND según medidor de potencia&#39;</span><span class="p">,</span><span class="n">errf</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Es despreciable&#39;</span><span class="p">)</span>
+<span class="n">w_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">w_2</span><span class="p">)</span>
+
+<span class="n">paso_3</span> <span class="o">=</span> <span class="n">paso3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">w_3</span> <span class="o">=</span> <span class="n">w3</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w3</span><span class="p">)</span>
+<span class="n">w_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">w_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error ND según medidor de potencia 0.026409961293969136
+Es despreciable
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="expresion-esperada">
+<h2>Expresión esperada<a class="headerlink" href="#expresion-esperada" title="Permalink to this headline">#</a></h2>
+<p>La siguiente expresión es la esperada para el filtro neutro continuo de Edmund Optics 54-082. El filtro tiene película de 0° a 310° en sentido horario. La expresión para la transmitancia es
+$<span class="math notranslate nohighlight">\( T = 10^{-ND}\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[ ND = m\theta \]</div>
+<p>Linearizando la ec. obtenemos:</p>
+<div class="math notranslate nohighlight">
+\[ \log_{10}(1/T) = m\theta \]</div>
+<section id="incertidumbre-para-el-caso-del-potenciometro-1815-c">
+<h3>Incertidumbre para el caso del potenciometro 1815-C<a class="headerlink" href="#incertidumbre-para-el-caso-del-potenciometro-1815-c" title="Permalink to this headline">#</a></h3>
+<p>Según el fabricante el máximo error relativo de la corriente <span class="math notranslate nohighlight">\(\alpha_A/A\)</span> es de 1.7%. Por lo tanto el error en la transmitancia normalizada será:</p>
+<div class="math notranslate nohighlight">
+\[\alpha_T = T \sqrt 2 \ \alpha_A/A \]</div>
+<p>Y de la expresión para ND tenemos que la incertudumbre será</p>
+<div class="math notranslate nohighlight">
+\[\alpha_{ND} = \frac{1}{T \ln 10} \alpha_T\]</div>
+<p>Luego tenemos que la incertidumbre final será</p>
+<div class="math notranslate nohighlight">
+\[ \alpha_{ND} = \frac{\sqrt 2}{\ln 10} \alpha_A/A \]</div>
+<p>Si incluimos el error del fotodetector, reportado para la longitud de onda como de 4%, tendremos que</p>
+<div class="math notranslate nohighlight">
+\[ \alpha_A/A = \sqrt{0.017^2 + 0.04^2} = 4.3\% \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Función de ajuste lineal</span>
+<span class="k">def</span> <span class="nf">ajuste</span><span class="p">(</span><span class="n">x</span><span class="p">,</span>  <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># pendiente según fabricante</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.0</span> <span class="o">-</span> <span class="mf">0.04</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">310</span> <span class="o">-</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Gráficación de los datos </span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ajsute lineal m = </span><span class="si">%.4f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">m</span>, fontsize = &#39;14&#39;)
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;54-082&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Ángulo/°&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;ND=log$_</span><span class="si">{10}</span><span class="s1">(1/T)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="c1"># Change major ticks to show every 20.</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="c1">#ax1.yaxis.set_major_locator(MultipleLocator(20))</span>
+
+<span class="c1"># Change minor ticks to show every 5. (20/4 = 5)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+
+<span class="c1"># Turn grid on for both major and minor ticks and style minor slightly</span>
+<span class="c1"># differently.</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Calibración_detectores_v7_6_0.png" src="../_images/Calibración_detectores_v7_6_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para que la función tenga sentido x se tiene que dar en grados.</span>
+<span class="c1"># Cómo originalmente son pasos se usa la siguiente relación</span>
+<span class="n">deltaAng</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="mi">2051</span>
+<span class="n">angM</span> <span class="o">=</span> <span class="mi">21</span> <span class="c1"># paso para mínima potencia, máxima ND</span>
+<span class="n">ang1</span> <span class="o">=</span> <span class="mi">310</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_1</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+<span class="n">ang2</span> <span class="o">=</span> <span class="mi">310</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_2</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+<span class="n">ang3</span> <span class="o">=</span> <span class="mi">310</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_3</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficación de los datos </span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax1</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Ajsute lineal&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang1</span><span class="p">,</span><span class="n">w_1</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;6767B&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2</span><span class="p">,</span><span class="n">w_2</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;13223&#39;</span><span class="p">)</span>
+<span class="c1">#ax1.errorbar(ang2,w_2,yerr=errf)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang3</span><span class="p">,</span><span class="n">w_3</span><span class="p">,</span> <span class="s1">&#39;v&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;13220&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;54-082&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">)</span> <span class="o">-</span> <span class="mf">0.08</span><span class="o">*</span><span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">)</span>
+         <span class="p">,</span> <span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.08</span><span class="o">*</span><span class="n">ajuste</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">310</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">m</span><span class="p">),</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Ángulo/°&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;log$_</span><span class="si">{10}</span><span class="s1">(1/T)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">twiny</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">paso_1</span><span class="p">,</span><span class="n">w_1</span><span class="p">,</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;13220&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Paso&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">invert_xaxis</span><span class="p">()</span>
+
+<span class="c1"># Change major ticks to show every 20.</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">MultipleLocator</span><span class="p">(</span><span class="mi">20</span><span class="p">))</span>
+<span class="c1">#ax1.yaxis.set_major_locator(MultipleLocator(20))</span>
+
+<span class="c1"># Change minor ticks to show every 5. (20/4 = 5)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_minor_locator</span><span class="p">(</span><span class="n">AutoMinorLocator</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="c1">#ax1.yaxis.set_minor_locator(AutoMinorLocator(4))</span>
+
+<span class="c1"># Turn grid on for both major and minor ticks and style minor slightly</span>
+<span class="c1"># differently.</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;major&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">which</span><span class="o">=</span><span class="s1">&#39;minor&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#CCCCCC&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Calibración_detectores_v7_8_0.png" src="../_images/Calibración_detectores_v7_8_0.png" />
+</div>
+</div>
+<section id="conclusiones">
+<h4>Conclusiones:<a class="headerlink" href="#conclusiones" title="Permalink to this headline">#</a></h4>
+<ol class="simple">
+<li><p>El valor de mínima transmitancia no está bien definido, esto es claro cuando se observa el 54-082, aunque el fabricante dice que si según su relación. El menor valor se da aprox. en el paso 1575.</p></li>
+<li><p>El nuestro solo llega hasta ND 3.5 aproximadamente porque nuestra medida es en 1064 nm, mientras que el del fabricante es en 633 nm. ¡Verificar!</p></li>
+<li><p>Se toman los datos de los fotodetectores como los reales dado que dio igual para los tres. Esto quiere decir que la linealidad del filtro es un poco menor a la reportada por el fabricante.</p></li>
+<li><p>Es claro que para bajos valores de ND el cambio en la película no es lineal. ¿O la respuesta de los fotodetectores no es lineal? Lo más probable es que si sea asunto del filtro porque los fotodetectores de Newport son lineales hasta corrientes de 10 mA, correspondientes a potencias de 10 mW pero con OD3 (3 W reales).</p></li>
+</ol>
+</section>
+</section>
+<section id="determinacion-de-la-pendiente-m-de-los-detectores">
+<h3>Determinación de la pendiente <span class="math notranslate nohighlight">\(m\)</span> de los detectores<a class="headerlink" href="#determinacion-de-la-pendiente-m-de-los-detectores" title="Permalink to this headline">#</a></h3>
+<p>Recordar que según Edumd Optics el  54-082 tiene una pendiente <span class="math notranslate nohighlight">\(m=0.0128\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Función de ajuste lineal</span>
+<span class="k">def</span> <span class="nf">ajuste2</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span>  <span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># realizar el ajuste</span>
+<span class="n">w_2a</span> <span class="o">=</span> <span class="n">w_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ang2a</span> <span class="o">=</span> <span class="n">ang1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">popt2</span><span class="p">,</span> <span class="n">cov2</span>  <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">ajuste2</span><span class="p">,</span> <span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">)</span>
+<span class="n">w2_ajuste</span> <span class="o">=</span> <span class="n">ajuste2</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="o">*</span><span class="n">popt2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La pendiente m encontrada para el 6722B fue </span><span class="si">%.4f</span><span class="s1">.&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">popt2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pendiente m encontrada para el 6722B fue 0.0108.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ajsute lineal para 6722B&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w2_ajuste</span><span class="p">,</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ángulo/°&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;log$_</span><span class="si">{10}</span><span class="s1">(1/T)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">100.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;m = </span><span class="si">%.4f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">popt2</span>[1],fontsize=14)
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Calibración_detectores_v7_12_0.png" src="../_images/Calibración_detectores_v7_12_0.png" />
+</div>
+</div>
+</section>
+<section id="grafica-de-los-valores-de-potencia-medidos-con-el-ohm">
+<h3>Gráfica de los valores de potencia medidos con el OHM<a class="headerlink" href="#grafica-de-los-valores-de-potencia-medidos-con-el-ohm" title="Permalink to this headline">#</a></h3>
+<p>El ajuste lineal nos da una pendiente de 0.0108. Intentaremos usar dicho valor para determinar la relación entre potencia y paso. Se harán los ajustes necesarios para obtener el mejor ajuste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PotPaso</span><span class="p">(</span><span class="n">paso</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">Ang0</span><span class="p">):</span>
+    <span class="n">P0</span> <span class="o">=</span> <span class="mi">406</span> <span class="c1"># Potencia máxima medida experimentalmente</span>
+    <span class="c1">#Ang0 = 305 # ángulo correspondiente a la máxima potencia</span>
+    <span class="n">ang</span> <span class="o">=</span> <span class="n">Ang0</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span>
+    <span class="k">return</span> <span class="n">P0</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="n">ang</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ajuste Exponencial, Potencia vs Paso&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">paso1</span><span class="p">,</span> <span class="n">w1</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span> <span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;6722B&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1820</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">PotPaso</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1820</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mf">0.0128</span><span class="p">,</span><span class="mi">310</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;m=0.0128&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">PotPaso</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1850</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mf">0.0108</span><span class="p">,</span><span class="mi">317</span><span class="p">),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;m=0.0108&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Paso&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Potencia (mW)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ajuste Exponencial, Potencia vs Paso&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">paso1</span><span class="p">[:</span><span class="o">-</span><span class="mi">10</span><span class="p">],</span> <span class="n">w1</span><span class="p">[:</span><span class="o">-</span><span class="mi">10</span><span class="p">],</span> <span class="s1">&#39;*&#39;</span> <span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;6722B&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">PotPaso</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mf">0.0128</span><span class="p">,</span><span class="mi">310</span><span class="p">),</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;m=0.0128&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">PotPaso</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">21</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="mf">0.0108</span><span class="p">,</span><span class="mi">317</span><span class="p">),</span><span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;m=0.0108&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Paso&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Potencia (mW)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Calibración_detectores_v7_15_0.png" src="../_images/Calibración_detectores_v7_15_0.png" />
+<img alt="../_images/Calibración_detectores_v7_15_1.png" src="../_images/Calibración_detectores_v7_15_1.png" />
+</div>
+</div>
+<p>El mejor ajuste se da para la pendiente de 0.0108, y se encuentra que el máximo de potencia se da a partir de 317° (el cero en la vertical midiendo en sentido antihorario). La ecuación que se usará en el laboratorio para determinar la potencia será:</p>
+<div class="math notranslate nohighlight">
+\[ \theta = 317 - (paso - 21)\times 360/2051\]</div>
+<div class="math notranslate nohighlight">
+\[P = P_0 10^{-m\theta}\]</div>
+<p>con <span class="math notranslate nohighlight">\(m = 0.0108\)</span> y <span class="math notranslate nohighlight">\(P_0 = 406\)</span> mW.</p>
+<p>El valor máximo de potencia sugerido será <span class="math notranslate nohighlight">\(100\)</span> mW.</p>
+<p>La diferencia en la pendiente entre el ajuste lineal y el de potencias de diez es seguramente debido al punto de mayor potencia.</p>
+</section>
+</section>
+<section id="calibracion-detectores-para-medir-en-potencia">
+<h2>Calibración detectores para medir en potencia<a class="headerlink" href="#calibracion-detectores-para-medir-en-potencia" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3>13223<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">flinea</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span>
+
+<span class="n">popt5</span><span class="p">,</span> <span class="n">pcov5</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">flinea</span><span class="p">,</span><span class="n">w2</span><span class="p">,</span><span class="n">w1</span><span class="p">)</span>
+<span class="n">popt6</span><span class="p">,</span> <span class="n">pcov6</span> <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">flinea</span><span class="p">,</span><span class="n">w3</span><span class="p">,</span><span class="n">w1</span><span class="p">)</span>
+
+
+<span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Calibración 13223&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span><span class="n">w1</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkblue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;13223&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span><span class="n">flinea</span><span class="p">(</span><span class="n">w2</span><span class="p">,</span><span class="o">*</span><span class="n">popt5</span><span class="p">),</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w3</span><span class="p">,</span><span class="n">w1</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span><span class="n">ms</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkred&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;13220&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w3</span><span class="p">,</span><span class="n">flinea</span><span class="p">(</span><span class="n">w3</span><span class="p">,</span><span class="o">*</span><span class="n">popt6</span><span class="p">),</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Corriente/$\mu$A&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Potencia/mW&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13223: Razón W/A = </span><span class="si">%.1e</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">popt5</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13220: Razón W/A = </span><span class="si">%.1e</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">popt6</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e3</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Responsitividades:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13223: Razón A/W = </span><span class="si">%.1e</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">popt5</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;13220: Razón W/A = </span><span class="si">%.1e</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">popt6</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Calibración_detectores_v7_18_0.png" src="../_images/Calibración_detectores_v7_18_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13223: Razón W/A = 4.1e+03
+13220: Razón W/A = 4.8e+03
+
+Responsitividades:
+13223: Razón A/W = 2.5e-04
+13220: Razón W/A = 2.1e-04
+</pre></div>
+</div>
+</div>
+</div>
+<section id="fotodetector-newport-818-sl-s13223-con-filtro-od3">
+<h4>Fotodetector: Newport 818-SL s13223 con filtro OD3<a class="headerlink" href="#fotodetector-newport-818-sl-s13223-con-filtro-od3" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paso2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">421</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">621</span><span class="p">,</span><span class="mi">721</span><span class="p">,</span><span class="mi">821</span><span class="p">,</span><span class="mi">921</span><span class="p">,</span><span class="mi">1021</span><span class="p">,</span><span class="mi">1121</span><span class="p">,</span><span class="mi">1221</span><span class="p">,</span>
+                  <span class="mi">1321</span><span class="p">,</span><span class="mi">1421</span><span class="p">,</span><span class="mi">1521</span><span class="p">,</span><span class="mi">1621</span><span class="p">,</span><span class="mi">1721</span><span class="p">,</span><span class="mi">1821</span><span class="p">,</span><span class="mi">1921</span><span class="p">,</span><span class="mi">2021</span><span class="p">])</span> <span class="c1"># paso</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.039</span><span class="p">,</span> <span class="mf">0.055</span><span class="p">,</span> <span class="mf">0.091</span><span class="p">,</span> <span class="mf">0.147</span><span class="p">,</span> <span class="mf">0.238</span><span class="p">,</span> <span class="mf">0.364</span><span class="p">,</span> <span class="mf">0.549</span><span class="p">,</span> <span class="mf">0.829</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span> <span class="mf">1.86</span><span class="p">,</span> <span class="mf">2.86</span><span class="p">,</span> 
+             <span class="mf">4.43</span><span class="p">,</span> <span class="mf">6.80</span><span class="p">,</span> <span class="mf">10.1</span><span class="p">,</span> <span class="mf">14.5</span><span class="p">,</span> <span class="mf">24.3</span><span class="p">,</span> <span class="mf">41.1</span><span class="p">,</span> <span class="mi">88</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mf">97.9</span><span class="p">,</span> <span class="mi">99</span><span class="p">])</span> <span class="c1"># potencia uA</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fotodetector-newport-818-sl-s13220-con-filtro-od3">
+<h4>Fotodetector: Newport 818-SL s13220 con filtro OD3<a class="headerlink" href="#fotodetector-newport-818-sl-s13220-con-filtro-od3" title="Permalink to this headline">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paso2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">21</span><span class="p">,</span><span class="mi">121</span><span class="p">,</span><span class="mi">221</span><span class="p">,</span><span class="mi">321</span><span class="p">,</span><span class="mi">421</span><span class="p">,</span><span class="mi">521</span><span class="p">,</span><span class="mi">621</span><span class="p">,</span><span class="mi">721</span><span class="p">,</span><span class="mi">821</span><span class="p">,</span><span class="mi">921</span><span class="p">,</span><span class="mi">1021</span><span class="p">,</span><span class="mi">1121</span><span class="p">,</span><span class="mi">1221</span><span class="p">,</span>
+                  <span class="mi">1321</span><span class="p">,</span><span class="mi">1421</span><span class="p">,</span><span class="mi">1521</span><span class="p">,</span><span class="mi">1621</span><span class="p">,</span><span class="mi">1721</span><span class="p">,</span><span class="mi">1821</span><span class="p">,</span><span class="mi">1921</span><span class="p">,</span><span class="mi">2021</span><span class="p">])</span> <span class="c1"># paso</span>
+
+<span class="n">i_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">,</span> <span class="mf">0.129</span><span class="p">,</span> <span class="mf">0.210</span><span class="p">,</span> <span class="mf">0.325</span><span class="p">,</span> <span class="mf">0.495</span><span class="p">,</span> <span class="mf">0.745</span><span class="p">,</span> <span class="mf">1.09</span><span class="p">,</span> <span class="mf">1.63</span><span class="p">,</span> 
+               <span class="mf">2.51</span><span class="p">,</span> <span class="mf">3.79</span><span class="p">,</span> <span class="mf">5.96</span><span class="p">,</span> <span class="mf">8.96</span><span class="p">,</span> <span class="mf">13.1</span><span class="p">,</span> <span class="mf">19.2</span><span class="p">,</span> <span class="mf">36.4</span><span class="p">,</span> <span class="mf">76.1</span><span class="p">,</span> <span class="mf">82.2</span><span class="p">,</span> <span class="mf">82.4</span><span class="p">,</span> <span class="mf">83.6</span><span class="p">])</span> <span class="c1"># potencia uA</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="calibracion-en-longitud-de-onda-de-633-nm">
+<h2>2. Calibración en longitud de onda de 633 nm<a class="headerlink" href="#calibracion-en-longitud-de-onda-de-633-nm" title="Permalink to this headline">#</a></h2>
+<section id="fotodetector-6722b">
+<h3>Fotodetector 6722B<a class="headerlink" href="#fotodetector-6722b" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paso1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">46</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">346</span><span class="p">,</span> <span class="mi">446</span><span class="p">,</span> <span class="mi">546</span><span class="p">,</span> <span class="mi">646</span><span class="p">,</span> <span class="mi">746</span><span class="p">,</span> <span class="mi">846</span><span class="p">,</span> <span class="mi">946</span><span class="p">,</span> <span class="mi">1046</span><span class="p">,</span> <span class="mi">1146</span><span class="p">,</span> <span class="mi">1246</span><span class="p">,</span> <span class="mi">1346</span><span class="p">,</span> <span class="mi">1446</span><span class="p">])</span>
+
+<span class="n">w1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.016</span><span class="p">,</span> <span class="mf">0.0296</span><span class="p">,</span> <span class="mf">0.0552</span><span class="p">,</span> <span class="mf">0.0856</span><span class="p">,</span> <span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.205</span><span class="p">,</span><span class="mf">0.555</span><span class="p">,</span>  <span class="mf">0.615</span><span class="p">,</span> <span class="mf">0.873</span><span class="p">,</span> <span class="mf">1.48</span><span class="p">,</span> 
+              <span class="mf">2.80</span><span class="p">,</span> <span class="mf">4.64</span><span class="p">,</span> <span class="mf">7.56</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">10.2</span><span class="p">])</span> <span class="c1"># potencia mW </span>
+
+<span class="n">paso_1</span> <span class="o">=</span> <span class="n">paso1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">w_1</span> <span class="o">=</span> <span class="n">w1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w1</span><span class="p">)</span>
+<span class="n">w_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">w_1</span><span class="p">)</span>
+
+<span class="c1"># Para que la función tenga sentido x se tiene que dar en grados.</span>
+<span class="c1"># Cómo originalmente son pasos se usa la siguiente relación</span>
+<span class="n">deltaAng</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="mi">2051</span>
+<span class="n">angM</span> <span class="o">=</span> <span class="mi">46</span> <span class="c1"># paso para mínima potencia, máxima ND</span>
+<span class="n">ang1</span> <span class="o">=</span> <span class="mi">310</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_1</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+
+<span class="c1"># realizar el ajuste</span>
+<span class="n">w_2a</span> <span class="o">=</span> <span class="n">w_1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ang2a</span> <span class="o">=</span> <span class="n">ang1</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">popt2</span><span class="p">,</span> <span class="n">cov2</span>  <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">ajuste2</span><span class="p">,</span> <span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">)</span>
+<span class="n">w2_ajuste</span> <span class="o">=</span> <span class="n">ajuste2</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="o">*</span><span class="n">popt2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La pendiente m encontrada para el 6722B fue </span><span class="si">%.4f</span><span class="s1">.&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">popt2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diferencia de </span><span class="si">%.1f</span><span class="s1"> </span><span class="si">%%</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">popt2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">0.0128</span><span class="p">)</span><span class="o">/</span><span class="mf">0.0128</span><span class="p">))</span>
+
+<span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ajsute lineal para 6722B&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w2_ajuste</span><span class="p">,</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ángulo/°&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;log$_</span><span class="si">{10}</span><span class="s1">(1/T)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">120.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;m = </span><span class="si">%.4f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">popt2</span>[1],fontsize=14)
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pendiente m encontrada para el 6722B fue 0.0124.
+Diferencia de 3.2 %
+</pre></div>
+</div>
+<img alt="../_images/Calibración_detectores_v7_24_1.png" src="../_images/Calibración_detectores_v7_24_1.png" />
+</div>
+</div>
+<p><strong>Conclusión</strong>: Cómo era de esperarse esta pendiente se aproxima mucho más a la pendiente reportada por el fabricante.</p>
+</section>
+<section id="fotodetector-818-sl-s13220-con-od3">
+<h3>Fotodetector 818-SL s13220 con OD3<a class="headerlink" href="#fotodetector-818-sl-s13220-con-od3" title="Permalink to this headline">#</a></h3>
+<p>Nota:  Medidas tomadas en la posición 3, en <span class="math notranslate nohighlight">\(1.24\)</span> <span class="math notranslate nohighlight">\(uA\)</span> (paso 1146) se satura y se cambia a la posición 4.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paso2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">46</span><span class="p">,</span> <span class="mi">146</span><span class="p">,</span> <span class="mi">246</span><span class="p">,</span> <span class="mi">346</span><span class="p">,</span> <span class="mi">446</span><span class="p">,</span> <span class="mi">546</span><span class="p">,</span> <span class="mi">646</span><span class="p">,</span> <span class="mi">746</span><span class="p">,</span> <span class="mi">846</span><span class="p">,</span> <span class="mi">946</span><span class="p">,</span> <span class="mi">1046</span><span class="p">,</span> <span class="mi">1146</span><span class="p">,</span> <span class="mi">1246</span><span class="p">,</span> <span class="mi">1346</span><span class="p">,</span> <span class="mi">1446</span><span class="p">,</span>
+                 <span class="mi">1546</span><span class="p">])</span>
+
+<span class="n">w2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.002</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.010</span><span class="p">,</span> <span class="mf">0.017</span><span class="p">,</span> <span class="mf">0.035</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.145</span><span class="p">,</span> <span class="mf">0.170</span><span class="p">,</span> <span class="mf">0.226</span><span class="p">,</span> <span class="mf">0.387</span><span class="p">,</span> <span class="mf">0.705</span><span class="p">,</span> <span class="mf">1.24</span><span class="p">,</span>
+              <span class="mf">2.04</span><span class="p">,</span> <span class="mf">2.70</span><span class="p">,</span> <span class="mf">2.80</span><span class="p">,</span> <span class="mf">2.68</span><span class="p">])</span> <span class="c1">#corriente uA</span>
+
+
+<span class="n">paso_2</span> <span class="o">=</span> <span class="n">paso2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">w_2</span> <span class="o">=</span> <span class="n">w2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">w2</span><span class="p">)</span>
+<span class="n">w_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">w_2</span><span class="p">)</span>
+<span class="n">ang2</span> <span class="o">=</span> <span class="mi">270</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_2</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+
+<span class="c1"># Para que la función tenga sentido x se tiene que dar en grados.</span>
+<span class="c1"># Cómo originalmente son pasos se usa la siguiente relación</span>
+<span class="n">deltaAng</span> <span class="o">=</span> <span class="mi">360</span><span class="o">/</span><span class="mi">2051</span>
+<span class="n">angM</span> <span class="o">=</span> <span class="mi">46</span> <span class="c1"># paso para mínima potencia, máxima ND</span>
+<span class="n">ang2</span> <span class="o">=</span> <span class="mi">310</span> <span class="o">-</span> <span class="p">(</span><span class="n">paso_2</span><span class="o">-</span><span class="n">angM</span><span class="p">)</span><span class="o">*</span><span class="n">deltaAng</span> <span class="c1"># Conversión de pasos a grados</span>
+
+<span class="c1"># realizar el ajuste</span>
+<span class="n">w_2a</span> <span class="o">=</span> <span class="n">w_2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">ang2a</span> <span class="o">=</span> <span class="n">ang2</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">popt2</span><span class="p">,</span> <span class="n">cov2</span>  <span class="o">=</span> <span class="n">curve_fit</span><span class="p">(</span><span class="n">ajuste2</span><span class="p">,</span> <span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">)</span>
+<span class="n">w2_ajuste</span> <span class="o">=</span> <span class="n">ajuste2</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="o">*</span><span class="n">popt2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;La pendiente m encontrada para el 6722B fue </span><span class="si">%.4f</span><span class="s1">.&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">popt2</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Diferencia de </span><span class="si">%.1f</span><span class="s1"> </span><span class="si">%%</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="nb">abs</span><span class="p">(</span><span class="n">popt2</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mf">0.0128</span><span class="p">)</span><span class="o">/</span><span class="mf">0.0128</span><span class="p">))</span>
+
+<span class="c1"># Gráficación de los datos </span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ajsute lineal para 6722B&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w_2a</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;darkblue&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ang2a</span><span class="p">,</span> <span class="n">w2_ajuste</span><span class="p">,</span> <span class="s1">&#39;-.&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Ángulo/°&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;log$_</span><span class="si">{10}</span><span class="s1">(1/T)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="s1">&#39;14&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">120.5</span><span class="p">,</span><span class="mf">2.0</span><span class="p">,</span><span class="s1">&#39;m = </span><span class="si">%.4f</span><span class="s1">&#39;</span><span class="o">%</span><span class="k">popt2</span>[1],fontsize=14)
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La pendiente m encontrada para el 6722B fue 0.0137.
+Diferencia de 6.7 %
+</pre></div>
+</div>
+<img alt="../_images/Calibración_detectores_v7_26_1.png" src="../_images/Calibración_detectores_v7_26_1.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "executablebooks/jupyter-book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="PotFunAngulo.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Error en potencia con disco filtro continuo</p>
+        </div>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Miembros GOF<br/>
+  
+      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Guía Laboratorio Grupo de Óptica y Fotónica (GOF)</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
