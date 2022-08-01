@@ -331,6 +331,7 @@ print('13220: Razón W/A = %.1e'%(1/popt6[0]*1e-3))
 
 
 # #### Fotodetector: Newport 818-SL s13223 con filtro OD3
+# 
 
 # In[11]:
 
@@ -342,7 +343,7 @@ i = np.array([0.039, 0.055, 0.091, 0.147, 0.238, 0.364, 0.549, 0.829, 1.24, 1.86
              4.43, 6.80, 10.1, 14.5, 24.3, 41.1, 88, 98, 97.9, 99]) # potencia uA
 
 
-# #### Fotodetector: Newport 818-SL s13220 con filtro OD3
+# #### Fotodetector: Newport 818-SL s13220 con filtro OD3 
 
 # In[12]:
 
@@ -399,7 +400,7 @@ plt.show()
 # **Conclusión**: Cómo era de esperarse esta pendiente se aproxima mucho más a la pendiente reportada por el fabricante.
 # 
 # ### Fotodetector 818-SL s13220 con OD3
-# Nota:  Medidas tomadas en la posición 3, en $1.24$ $uA$ (paso 1146) se satura y se cambia a la posición 4.
+# Nota:  Medidas tomadas en la posición 3, en $1.24$ $uA$ (paso 1146) se satura y se cambia a la posición 4. 
 
 # In[14]:
 
