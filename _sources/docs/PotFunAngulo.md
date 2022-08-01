@@ -15,8 +15,8 @@ Determinación del error cometido en la potencia promedio al usar un filtro neut
 
 Por: Edgar Rueda, julio 2022
 
-```{note}
-Prueba de que actualizó.
+```{admonition} Nota
+La idea es saber si estamos cometiendo un error sistemático importante
 ```
 
 #### Problema
