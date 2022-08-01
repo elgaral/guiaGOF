@@ -10,11 +10,14 @@ kernelspec:
   language: python
   name: python3
 ---
-
 # Error en potencia con disco filtro continuo
 Determinación del error cometido en la potencia promedio al usar un filtro neutro de densidad óptica continua.
 
 Por: Edgar Rueda, julio 2022
+
+```{note}
+Prueba de que actualizó.
+```
 
 #### Problema
 Se tiene un haz de perfil de irradiancia Gaussiano que incide sobre un disco filtro neutro que varía su densidad óptica en función del ángulo. El haz Gaussiano está centrado en el sistema coordenado (x',y'), y el disco neutro está centrado en el sistema coordenado (X,Y), como se observa en la figura.
@@ -113,7 +116,7 @@ print(Pesp)
 ```{code-cell} ipython3
 #Parámetros particulares. No obstante el resultado se presenta normalizado con respecto al caso uno por lo
 # que los valores particulares no influyen en la conclusión
-w0=0.01 
+w0=0.01
 I0=1
 m=0.128 # Valor del disco de Edmund Optics que se tiene en el laboratorio
 R2 = np.linspace(0,2*w0,50)
@@ -136,7 +139,7 @@ plt.show()
 ```{code-cell} ipython3
 #Parámetros particulares. No obstante el resultado se presenta normalizado con respecto al caso uno por lo
 # que los valores particulares no influyen en la conclusión
-w0=0.01 
+w0=0.01
 I0=1
 m=1.128 # Un orden por encima del Valor del disco de Edmund Optics que se tiene en el laboratorio
 R2 = np.linspace(0,2*w0,50)
@@ -159,7 +162,7 @@ plt.show()
 ```{code-cell} ipython3
 #Parámetros particulares. No obstante el resultado se presenta normalizado con respecto al caso uno por lo
 # que los valores particulares no influyen en la conclusión
-w0=0.01 
+w0=0.01
 I0=1
 m=0.0128 # Un orden por debajo del valor del disco de Edmund Optics que se tiene en el laboratorio
 R2 = np.linspace(0,2*w0,50)
@@ -186,7 +189,7 @@ plt.show()
 
 **Perspectiva**
 
-Sugiero crear mapas de irradiancia para ver como cambia la irradiancia, y empezar a mirar si esto puede afectar la propagación del haz. El trabajo final es mirar como se deforma el haz Gaussiano y que implicaciones tiene en el plano de la muestra para generar TPA. 
+Sugiero crear mapas de irradiancia para ver como cambia la irradiancia, y empezar a mirar si esto puede afectar la propagación del haz. El trabajo final es mirar como se deforma el haz Gaussiano y que implicaciones tiene en el plano de la muestra para generar TPA.
 
 ```{code-cell} ipython3
 
